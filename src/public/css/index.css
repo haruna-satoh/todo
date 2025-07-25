@@ -26,12 +26,12 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    width: 70px;
+    width: 70%;
     text-align: center;
 }
 
 .create-form__item {
-    width: 70px;
+    width: 70%;
 }
 
 .create-form__item-input {

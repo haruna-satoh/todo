@@ -58,7 +58,7 @@
                 <td class="todo-table__item">
                     <form action="" class="delete-form">
                         <div class="delete-form__button">
-                            <button class="delete-form__button-dubmit" type="submit">削除</button>
+                            <button class="delete-form__button-submit" type="submit">削除</button>
                         </div>
                     </form>
                 </td>
