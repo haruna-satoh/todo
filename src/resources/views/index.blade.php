@@ -41,10 +41,14 @@
             @foreach ($todos as $todo)
             <tr class="todo-table__row">
                 <td class="todo-table__item">
-                    <form action="" class="update-form">
+                    <form action="/todos/update" method="post" class="update-form">
+                        @method('patch')
+                        @csrf
                         <div class="update-form__item">
                             {{-- <input type="text" name="content" value="test" class="update-form__item-input"> --}}
-                            <p class="update-form__item-input">{{ $todo['content'] }}</p>
+                            {{-- <p class="update-form__item-input">{{ $todo['content'] }}</p> --}}
+                            <input type="text" name="content" value="{{ $todo['content'] }}" class="update-form__item-input">
+                            <input type="hidden" name="id" value="{{ $todo['id'] }}">
                         </div>
                         <div class="update-form__button">
                             <button class="update-form__button-submit" type="submit">更新</button>
