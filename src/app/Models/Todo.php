@@ -9,6 +9,14 @@ class Todo extends Model
 {
     use HasFactory;
 
-    // contentを操作可能にする
-    protected $fillable = ['content'];
+    // category_idとcontentを操作可能にする
+    protected $fillable = [
+        'category_id',
+        'content'
+    ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
