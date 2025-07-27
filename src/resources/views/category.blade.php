@@ -47,6 +47,13 @@
                             </div>
                         </form>
                     </td>
+                    <td class="category-table__item">
+                        <form action="" class="delete-form">
+                            <div class="delete-form__button">
+                                <button class="delete-form__button-submit" type="submit">削除</button>
+                            </div>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </table>
