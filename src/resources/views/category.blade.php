@@ -12,7 +12,7 @@
         </div>
     @endif
     @if ($errors->any())
-        <div class="category__alet--danger">
+        <div class="category__alert--danger">
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{  $error }}</li>
@@ -25,7 +25,7 @@
     <form action="/categories" method="post" class="create-form">
         @csrf
         <div class="create-form__item">
-            <input type="text" name="name" class="create-form__item-input">
+            <input type="text" name="name" value="{{ old('name') }}" class="create-form__item-input">
         </div>
         <div class="create-form__button">
             <button class="create-form__button-submit" type="submit">作成</button>
