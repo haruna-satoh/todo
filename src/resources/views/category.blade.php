@@ -39,9 +39,12 @@
             @foreach ($categories as $category)
                 <tr class="category-table__row">
                     <td class="category-table__item">
-                        <form action="" class="update-form">
+                        <form action="/categories/update" method="post" class="update-form">
+                            @method('patch')
+                            @csrf
                             <div class="update-form__item">
-                                <input type="text" value="{{ $category['name'] }}" class="update-form__item-input">
+                                <input type="text" name="name" value="{{ $category['name'] }}" class="update-form__item-input">
+                                <input type="hidden" name="id" value="{{ $category['id'] }}">
                             </div>
                             <div class="update-form__button">
                                 <button class="update-form__button-submit" type="submit">更新</button>
