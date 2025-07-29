@@ -31,8 +31,11 @@
     @csrf
         <div class="create-form__item">
             <input type="text" name="content" value="{{ old('content') }}" class="create-form__item-input" />
-            <select name="" id="" class="create-form__item-select">
-                <option value="">カテゴリ</option>
+            <select name="category_id" id="" class="create-form__item-select">
+                @foreach ($categories as $category)
+                    <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+                @endforeach
+                {{-- <option value="">カテゴリ</option> --}}
             </select>
         </div>
         <div class="create-form__button">
