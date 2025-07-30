@@ -32,6 +32,7 @@
         <div class="create-form__item">
             <input type="text" name="content" value="{{ old('content') }}" class="create-form__item-input" />
             <select name="category_id" id="" class="create-form__item-select">
+                <option value="">カテゴリ</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
                 @endforeach
@@ -45,11 +46,15 @@
     <div class="section__title">
         <h2>Todo検索</h2>
     </div>
-    <form action="" class="search-form">
+    <form action="/todos/search" method="get" class="search-form">
+        @csrf
         <div class="search-form__item">
-            <input type="text" class="search-form__item-input" />
-            <select name="" id="" class="search-form__item-select">
+            <input type="text" name="keyword" value="{{ old('keyword') }}" class="search-form__item-input" />
+            <select name="category_id" id="" class="search-form__item-select">
                 <option value="">カテゴリ</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+                @endforeach
             </select>
         </div>
         <div class="search-form__button">
