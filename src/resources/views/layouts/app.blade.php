@@ -20,9 +20,17 @@
                 </a>
                 <nav>
                     <ul class="header-nav">
+                        @if (Auth::check())
                         <li class="header-nav__item">
                             <a href="/categories" class="header-nav__link">カテゴリ一覧</a>
                         </li>
+                        <li class="header-nav__item">
+                            <form action="/logout" method="post">
+                                @csrf
+                                <button class="header-nav__button">ログアウト</button>
+                            </form>
+                        </li>
+                        @endif
                     </ul>
                 </nav>
             </div>

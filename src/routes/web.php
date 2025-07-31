@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\CategoryController;
 
@@ -19,7 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', [TodoController::class, 'index']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', [TodoController::class, 'index'])->name('index');
+});
 
 Route::post('/todos', [TodoController::class, 'store']);
 
@@ -36,3 +39,8 @@ Route::patch('/categories/update', [CategoryController::class, 'update']);
 Route::delete('/categories/delete', [CategoryController::class, 'destroy']);
 
 Route::get('/todos/search', [TodoController::class, 'search']);
+
+// Route::get('/', [AuthController::class, 'index']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', [AuthController::class, 'index']);
+});
