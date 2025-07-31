@@ -4,7 +4,7 @@ todo
 
 # 概要
 
-Todoアプリ
+Todoアプリです。カテゴリごとに登録・編集・検索・削除ができます。
 
 ## 環境
 - PHP バージョン: 7.4
@@ -41,6 +41,16 @@ php artisan migrate
 5. アプリにアクセス
 
 ・ [http://localhost](http://localhost)
-    →todoアプリのトップページが表示されます
-・　[http://localhost:8080/](http://localhost:8080/)
+    →Todoアプリのトップページが表示されます（ログイン必須）
+・ [http://localhost:8080/](http://localhost:8080/)
     →phpMyAdminが開きます(DB確認用)
+
+## 認証機能
+
+このアプリはユーザー認証機能（ログイン/新規登録）が実装されています。
+
+Laravel Fortifyを使用しています。
+
+### ログイン方法
+1. 新規登録画面から任意のユーザー情報を入力してアカウントを作成してください。
+2. 登録後、自動的にログイン状態となりTodo一覧ページが開きます。
